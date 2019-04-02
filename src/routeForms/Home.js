@@ -31,7 +31,12 @@ class Home extends React.Component {
           </Flip>
         </div>
         <br className="break" />
-        <div className="clickableLink" onClick={()=>window.open('https://github.com/soohoo05/Computer-Parts-API')}>
+        <div
+          className="clickableLink"
+          onClick={() =>
+            window.open("https://github.com/soohoo05/Computer-Parts-API")
+          }
+        >
           <Flip top cascade duration={2500}>
             https://github.com/soohoo05/Computer-Parts-API
           </Flip>
