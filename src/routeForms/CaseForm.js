@@ -1,9 +1,23 @@
 import React from "react";
+import Bounce from 'react-reveal/Bounce';
 
 class CaseForm extends React.Component {
+  state={
+    Name:"",
+    Type:"",
+    Color:"",
+    Price:"",
+    Picture:""
+  }
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
   render() {
     return (
       <form class="form-horizontal">
+        <Bounce>
         <fieldset>
           <legend align="center">Case Form</legend>
           <div className="error" />
@@ -18,6 +32,8 @@ class CaseForm extends React.Component {
                 type="text"
                 placeholder="Name"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Name}
               />
             </div>
           </div>
@@ -33,6 +49,8 @@ class CaseForm extends React.Component {
                 type="text"
                 placeholder="Type"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Type}
               />
             </div>
           </div>
@@ -48,6 +66,8 @@ class CaseForm extends React.Component {
                 type="text"
                 placeholder="Color"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Color}
               />
             </div>
           </div>
@@ -63,6 +83,8 @@ class CaseForm extends React.Component {
                 type="text"
                 placeholder="Price"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Price}
               />
             </div>
           </div>
@@ -78,6 +100,8 @@ class CaseForm extends React.Component {
                 type="text"
                 placeholder="Picture"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Picture}
               />
             </div>
           </div>
@@ -91,6 +115,7 @@ class CaseForm extends React.Component {
             </div>
           </div>
         </fieldset>
+      </Bounce>
       </form>
     );
   }

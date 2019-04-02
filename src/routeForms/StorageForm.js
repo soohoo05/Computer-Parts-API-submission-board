@@ -1,9 +1,25 @@
 import React from "react";
+import Bounce from 'react-reveal/Bounce';
 
 class StorageForm extends React.Component {
+  state={
+    Name:"",
+    Form:"",
+    Type:"",
+    Color:"",
+    Capacity:"",
+    Price:"",
+    Picture:""
+  }
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
   render() {
     return (
       <form class="form-horizontal">
+        <Bounce>
         <fieldset>
           <legend align="center">Storage Form</legend>
           <div className="error" />
@@ -18,6 +34,8 @@ class StorageForm extends React.Component {
                 type="text"
                 placeholder="Name"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Name}
               />
             </div>
           </div>
@@ -33,6 +51,8 @@ class StorageForm extends React.Component {
                 type="text"
                 placeholder="Form"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Form}
               />
             </div>
           </div>
@@ -48,6 +68,8 @@ class StorageForm extends React.Component {
                 type="text"
                 placeholder="Type"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Type}
               />
             </div>
           </div>
@@ -63,6 +85,8 @@ class StorageForm extends React.Component {
                 type="text"
                 placeholder="Color"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Color}
               />
             </div>
           </div>
@@ -78,6 +102,8 @@ class StorageForm extends React.Component {
                 type="text"
                 placeholder="Capacity"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Capacity}
               />
             </div>
           </div>
@@ -93,6 +119,8 @@ class StorageForm extends React.Component {
                 type="text"
                 placeholder="Price"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Price}
               />
             </div>
           </div>
@@ -108,6 +136,8 @@ class StorageForm extends React.Component {
                 type="text"
                 placeholder="Picture"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Picture}
               />
             </div>
           </div>
@@ -121,6 +151,7 @@ class StorageForm extends React.Component {
             </div>
           </div>
         </fieldset>
+      </Bounce>
       </form>
     );
   }

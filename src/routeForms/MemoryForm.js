@@ -1,9 +1,26 @@
 import React from "react";
+import Bounce from 'react-reveal/Bounce';
 
 class MemoryForm extends React.Component {
+  state={
+    Name:"",
+    Speed:"",
+    Type:"",
+    Color:"",
+    Modules:"",
+    Size:"",
+    Price:"",
+    Picture:""
+  }
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
   render() {
     return (
       <form class="form-horizontal">
+        <Bounce>
         <fieldset>
           <legend align="center">Memory Form</legend>
           <div className="error" />
@@ -18,6 +35,8 @@ class MemoryForm extends React.Component {
                 type="text"
                 placeholder="Name"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Name}
               />
             </div>
           </div>
@@ -33,6 +52,8 @@ class MemoryForm extends React.Component {
                 type="text"
                 placeholder="Speed"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Speed}
               />
             </div>
           </div>
@@ -48,6 +69,8 @@ class MemoryForm extends React.Component {
                 type="text"
                 placeholder="Type"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Type}
               />
             </div>
           </div>
@@ -62,6 +85,8 @@ class MemoryForm extends React.Component {
                 type="text"
                 placeholder="Color"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Color}
               />
             </div>
           </div>
@@ -77,6 +102,8 @@ class MemoryForm extends React.Component {
                 type="text"
                 placeholder="Modules"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Modules}
               />
             </div>
           </div>
@@ -92,6 +119,8 @@ class MemoryForm extends React.Component {
                 type="text"
                 placeholder="Size"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Size}
               />
             </div>
           </div>
@@ -107,6 +136,8 @@ class MemoryForm extends React.Component {
                 type="text"
                 placeholder="Price"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Price}
               />
             </div>
           </div>
@@ -122,6 +153,8 @@ class MemoryForm extends React.Component {
                 type="text"
                 placeholder="Picture"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Picture}
               />
             </div>
           </div>
@@ -135,6 +168,7 @@ class MemoryForm extends React.Component {
             </div>
           </div>
         </fieldset>
+      </Bounce>
       </form>
     );
   }

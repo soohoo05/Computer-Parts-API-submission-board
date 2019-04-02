@@ -1,9 +1,26 @@
 import React from "react";
+import Bounce from 'react-reveal/Bounce';
 
 class VideoCardForm extends React.Component {
+  state={
+    Name:"",
+    chipSet:"",
+    Type:"",
+    Color:"",
+    Memory:"",
+    coreClock:"",
+    Price:"",
+    Picture:""
+  }
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
   render() {
     return (
       <form class="form-horizontal">
+        <Bounce>
         <fieldset>
           <legend align="center">Video Card Form</legend>
           <div className="error" />
@@ -18,6 +35,8 @@ class VideoCardForm extends React.Component {
                 type="text"
                 placeholder="Name"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Name}
               />
             </div>
           </div>
@@ -33,6 +52,8 @@ class VideoCardForm extends React.Component {
                 type="text"
                 placeholder="Chip Set"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.chipSet}
               />
             </div>
           </div>
@@ -48,6 +69,8 @@ class VideoCardForm extends React.Component {
                 type="text"
                 placeholder="Type"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Type}
               />
             </div>
           </div>
@@ -63,6 +86,8 @@ class VideoCardForm extends React.Component {
                 type="text"
                 placeholder="Color"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Color}
               />
             </div>
           </div>
@@ -78,6 +103,8 @@ class VideoCardForm extends React.Component {
                 type="text"
                 placeholder="Memory"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Memory}
               />
             </div>
           </div>
@@ -93,6 +120,8 @@ class VideoCardForm extends React.Component {
                 type="text"
                 placeholder="Core Clock"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.coreClock}
               />
             </div>
           </div>
@@ -108,6 +137,8 @@ class VideoCardForm extends React.Component {
                 type="text"
                 placeholder="Price"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Price}
               />
             </div>
           </div>
@@ -123,6 +154,8 @@ class VideoCardForm extends React.Component {
                 type="text"
                 placeholder="Picture"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Picture}
               />
             </div>
           </div>
@@ -136,6 +169,7 @@ class VideoCardForm extends React.Component {
             </div>
           </div>
         </fieldset>
+      </Bounce>
       </form>
     );
   }

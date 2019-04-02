@@ -1,9 +1,25 @@
 import React from "react";
+import Bounce from 'react-reveal/Bounce';
 
 class CoolerForm extends React.Component {
+  state={
+    Name:"",
+    RPM:"",
+    Noise:"",
+    Color:"",
+    WaterCooled:"",
+    Price:"",
+    Picture:""
+  }
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
   render() {
     return (
       <form class="form-horizontal">
+        <Bounce>
         <fieldset>
           <legend align="center">Case Form</legend>
           <div className="error" />
@@ -19,6 +35,8 @@ class CoolerForm extends React.Component {
                 type="text"
                 placeholder="Name"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Name}
               />
             </div>
           </div>
@@ -34,6 +52,8 @@ class CoolerForm extends React.Component {
                 type="text"
                 placeholder="RPM"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.RPM}
               />
             </div>
           </div>
@@ -49,6 +69,8 @@ class CoolerForm extends React.Component {
                 type="text"
                 placeholder="Noise"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Noise}
               />
             </div>
           </div>
@@ -64,6 +86,8 @@ class CoolerForm extends React.Component {
                 type="text"
                 placeholder="Color"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Color}
               />
             </div>
           </div>
@@ -79,6 +103,8 @@ class CoolerForm extends React.Component {
                 type="text"
                 placeholder="Water Cooled"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.WaterCooled}
               />
             </div>
           </div>
@@ -94,6 +120,8 @@ class CoolerForm extends React.Component {
                 type="text"
                 placeholder="Price"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Price}
               />
             </div>
           </div>
@@ -109,6 +137,8 @@ class CoolerForm extends React.Component {
                 type="text"
                 placeholder="Picture"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Picture}
               />
             </div>
           </div>
@@ -122,6 +152,7 @@ class CoolerForm extends React.Component {
             </div>
           </div>
         </fieldset>
+      </Bounce>
       </form>
     );
   }

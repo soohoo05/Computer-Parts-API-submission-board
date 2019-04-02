@@ -1,9 +1,26 @@
 import React from "react";
+import Bounce from 'react-reveal/Bounce';
 
 class PowerSupplyForm extends React.Component {
+  state={
+    Name:"",
+    Form:"",
+    Efficiency:"",
+    Color:"",
+    Watts:"",
+    Modular:"",
+    Price:"",
+    Picture:""
+  }
+  changeHandler = (e) => {
+    this.setState({
+      [e.target.name]:e.target.value
+    })
+  }
   render() {
     return (
       <form class="form-horizontal">
+        <Bounce>
         <fieldset>
           <legend align="center">Power Supply Form</legend>
           <div className="error" />
@@ -18,6 +35,8 @@ class PowerSupplyForm extends React.Component {
                 type="text"
                 placeholder="Name"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Name}
               />
             </div>
           </div>
@@ -33,6 +52,8 @@ class PowerSupplyForm extends React.Component {
                 type="text"
                 placeholder="Form"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Form}
               />
             </div>
           </div>
@@ -47,6 +68,8 @@ class PowerSupplyForm extends React.Component {
                 type="text"
                 placeholder="Efficiency"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Efficiency}
               />
             </div>
           </div>
@@ -62,6 +85,8 @@ class PowerSupplyForm extends React.Component {
                 type="text"
                 placeholder="Color"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Color}
               />
             </div>
           </div>
@@ -77,6 +102,8 @@ class PowerSupplyForm extends React.Component {
                 type="text"
                 placeholder="Watts"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Watts}
               />
             </div>
           </div>
@@ -91,6 +118,8 @@ class PowerSupplyForm extends React.Component {
                 type="text"
                 placeholder="Modular"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Modular}
               />
             </div>
           </div>
@@ -106,6 +135,8 @@ class PowerSupplyForm extends React.Component {
                 type="text"
                 placeholder="Price"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Price}
               />
             </div>
           </div>
@@ -121,6 +152,8 @@ class PowerSupplyForm extends React.Component {
                 type="text"
                 placeholder="Picture"
                 class="form-control input-md"
+                onChange={(e)=>this.changeHandler(e)}
+                value={this.state.Picture}
               />
             </div>
           </div>
@@ -134,6 +167,7 @@ class PowerSupplyForm extends React.Component {
             </div>
           </div>
         </fieldset>
+      </Bounce>
       </form>
     );
   }
