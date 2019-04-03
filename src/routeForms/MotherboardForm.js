@@ -17,152 +17,171 @@ class MotherboardForm extends React.Component {
       [e.target.name]:e.target.value
     })
   }
+  checkFields = (e) => {
+    e.preventDefault()
+    let copy=this.state
+    let errors=false
+    for(var key in copy) {
+          if(copy[key] === "" && key !=="errors") {
+             errors=true
+             this.setState({
+               errors:"Fields cannot be left blank"
+             })
+          }
+      }
+      if(!errors){
+        console.log("no errors")
+        this.setState({
+          errors:""
+        })
+      }
+  }
   render() {
     return (
-      <form class="form-horizontal">
+      <form className="form-horizontal" onSubmit={(e)=>this.checkFields(e)}>
         <Bounce>
         <fieldset>
           <legend align="center">Motherboard Form</legend>
-          <div className="error" />
-          <div class="form-group top">
-            <label class="col-md-4 control-label" for="Name">
+          <div className="error">{this.state.errors}</div>
+          <div className="form-group top">
+            <label className="col-md-4 control-label" htmlFor="Name">
               Name
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Name"
                 name="Name"
                 type="text"
                 placeholder="Name"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Name}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Socket">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Socket">
               Socket
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Socket"
                 name="Socket"
                 type="text"
                 placeholder="Socket"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Socket}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Form">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Form">
               Form
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Form"
                 name="Form"
                 type="text"
                 placeholder="Form"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Form}
               />
             </div>
           </div>
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Color">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Color">
               Color
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Color"
                 name="Color"
                 type="text"
                 placeholder="Color"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Color}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Slots">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Slots">
               Slots
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Slots"
                 name="Slots"
                 type="text"
                 placeholder="Slots"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Slots}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="maxRam">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="maxRam">
               Maximum Ram
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="maxRam"
                 name="maxRam"
                 type="text"
                 placeholder="Maximum Ram"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.maxRam}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Price">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Price">
               Price
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Price"
                 name="Price"
                 type="text"
                 placeholder="Price"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Price}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Picture">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Picture">
               Picture
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Picture"
                 name="Picture"
                 type="text"
                 placeholder="Picture"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Picture}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Submit" />
-            <div class="col-md-4">
-              <button id="Submit" name="Submit" class="btn btn-primary">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Submit" />
+            <div className="col-md-4">
+              <button id="Submit" name="Submit" className="btn btn-primary">
                 Submit
               </button>
             </div>

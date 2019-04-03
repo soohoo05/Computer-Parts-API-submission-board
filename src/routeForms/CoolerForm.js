@@ -16,137 +16,156 @@ class CoolerForm extends React.Component {
       [e.target.name]:e.target.value
     })
   }
+  checkFields = (e) => {
+    e.preventDefault()
+    let copy=this.state
+    let errors=false
+    for(var key in copy) {
+          if(copy[key] === "" && key !=="errors") {
+             errors=true
+             this.setState({
+               errors:"Fields cannot be left blank"
+             })
+          }
+      }
+      if(!errors){
+        console.log("no errors")
+        this.setState({
+          errors:""
+        })
+      }
+  }
   render() {
     return (
-      <form class="form-horizontal">
+      <form className="form-horizontal" onSubmit={(e)=>this.checkFields(e)}>
         <Bounce>
         <fieldset>
           <legend align="center">Case Form</legend>
-          <div className="error" />
+          <div className="error">{this.state.errors}</div>
 
-          <div class="form-group top">
-            <label class="col-md-4 control-label" for="Name">
+          <div className="form-group top">
+            <label className="col-md-4 control-label" htmlFor="Name">
               Name
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Name"
                 name="Name"
                 type="text"
                 placeholder="Name"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Name}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="RPM">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="RPM">
               RPM
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="RPM"
                 name="RPM"
                 type="text"
                 placeholder="RPM"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.RPM}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Noise">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Noise">
               Noise
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Noise"
                 name="Noise"
                 type="text"
                 placeholder="Noise"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Noise}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Color">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Color">
               Color
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Color"
                 name="Color"
                 type="text"
                 placeholder="Color"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Color}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="WaterCooled">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="WaterCooled">
               Water Cooled
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="WaterCooled"
                 name="WaterCooled"
                 type="text"
                 placeholder="Water Cooled"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.WaterCooled}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Price">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Price">
               Price
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Price"
                 name="Price"
                 type="text"
                 placeholder="Price"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Price}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Picture">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Picture">
               Picture
             </label>
-            <div class="col-md-4">
+            <div className="col-md-4">
               <input
                 id="Picture"
                 name="Picture"
                 type="text"
                 placeholder="Picture"
-                class="form-control input-md"
+                className="form-control input-md"
                 onChange={(e)=>this.changeHandler(e)}
                 value={this.state.Picture}
               />
             </div>
           </div>
 
-          <div class="form-group">
-            <label class="col-md-4 control-label" for="Submit" />
-            <div class="col-md-4">
-              <button id="Submit" name="Submit" class="btn btn-primary">
+          <div className="form-group">
+            <label className="col-md-4 control-label" htmlFor="Submit" />
+            <div className="col-md-4">
+              <button id="Submit" name="Submit" className="btn btn-primary">
                 Submit
               </button>
             </div>

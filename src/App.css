@@ -18,6 +18,11 @@ body{
 	-webkit-animation: flash linear 1s infinite;
 	animation: flash linear 1s infinite;
 }
+.ErrorBlink{
+  color:#FF0000;
+	-webkit-animation: flash linear 1s infinite;
+	animation: flash linear 1s infinite;
+}
 @-webkit-keyframes flash {
 	0% { opacity: 1; }
 	50% { opacity: .1; }
@@ -101,4 +106,7 @@ border-radius: 20px;
 .error{
   height:5vh;
   margin: 1vh;
+  color:#FF0000;
+  -webkit-animation: flash linear 1s infinite;
+  animation: flash linear 1s infinite;
 }
