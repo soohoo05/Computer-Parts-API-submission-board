@@ -1,5 +1,6 @@
 import React from "react";
 import Bounce from 'react-reveal/Bounce';
+import {Submitter} from '../actions/Submitter';
 
 class CPUForm extends React.Component {
   state={
@@ -27,9 +28,10 @@ class CPUForm extends React.Component {
           }
       }
       if(!errors){
-        console.log("no errors")
+        Submitter("CPU",this.state)
         this.setState({
-          errors:""
+          errors:"Submitted!"
+
         })
       }
   }

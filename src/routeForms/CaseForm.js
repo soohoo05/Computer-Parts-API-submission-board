@@ -1,5 +1,6 @@
 import React from "react";
 import Bounce from 'react-reveal/Bounce';
+import {Submitter} from '../actions/Submitter';
 
 class CaseForm extends React.Component {
   state={
@@ -20,7 +21,7 @@ class CaseForm extends React.Component {
     let copy=this.state
     let errors=false
     for(var key in copy) {
-          if(copy[key] === "" && key !=="errors") {
+          if((copy[key] === "" || copy[key] ==="---") && key !=="errors"  ) {
              errors=true
              this.setState({
                errors:"Fields cannot be left blank"
@@ -28,9 +29,10 @@ class CaseForm extends React.Component {
           }
       }
       if(!errors){
-        console.log("no errors")
+        Submitter("Case",this.state)
         this.setState({
-          errors:""
+          errors:"Submitted!"
+
         })
       }
   }

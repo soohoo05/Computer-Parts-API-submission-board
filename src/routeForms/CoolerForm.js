@@ -1,5 +1,6 @@
 import React from "react";
 import Bounce from 'react-reveal/Bounce';
+import {Submitter} from '../actions/Submitter';
 
 class CoolerForm extends React.Component {
   state={
@@ -9,7 +10,8 @@ class CoolerForm extends React.Component {
     Color:"",
     WaterCooled:"",
     Price:"",
-    Picture:""
+    Picture:"",
+    errors:""
   }
   changeHandler = (e) => {
     this.setState({
@@ -21,7 +23,7 @@ class CoolerForm extends React.Component {
     let copy=this.state
     let errors=false
     for(var key in copy) {
-          if(copy[key] === "" && key !=="errors") {
+          if((copy[key] === "" || copy[key] ==="---") && key !=="errors"  ) {
              errors=true
              this.setState({
                errors:"Fields cannot be left blank"
@@ -29,9 +31,10 @@ class CoolerForm extends React.Component {
           }
       }
       if(!errors){
-        console.log("no errors")
+        Submitter("Cooler",this.state)
         this.setState({
-          errors:""
+          errors:"Submitted!"
+
         })
       }
   }
@@ -40,7 +43,7 @@ class CoolerForm extends React.Component {
       <form className="form-horizontal" onSubmit={(e)=>this.checkFields(e)}>
         <Bounce>
         <fieldset>
-          <legend align="center">Case Form</legend>
+          <legend align="center">Cooler Form</legend>
           <div className="error">{this.state.errors}</div>
 
           <div className="form-group top">
@@ -116,15 +119,13 @@ class CoolerForm extends React.Component {
               Water Cooled
             </label>
             <div className="col-md-4">
-              <input
-                id="WaterCooled"
-                name="WaterCooled"
-                type="text"
-                placeholder="Water Cooled"
-                className="form-control input-md"
-                onChange={(e)=>this.changeHandler(e)}
-                value={this.state.WaterCooled}
-              />
+
+            <select value={this.state.WaterCooled} className="form-control input-md" name="WaterCooled"   onChange={(e)=>this.changeHandler(e)}>
+              <option value="---">---</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+
             </div>
           </div>
 
