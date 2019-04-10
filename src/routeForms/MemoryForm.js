@@ -11,7 +11,8 @@ class MemoryForm extends React.Component {
     Modules: "",
     Size: "",
     Price: "",
-    Picture: ""
+    Picture: "",
+    errors:""
   };
   changeHandler = e => {
     this.setState({
@@ -33,6 +34,14 @@ class MemoryForm extends React.Component {
     if (!errors) {
       Submitter("Memory", this.state);
       this.setState({
+        Name: "",
+        Speed: "",
+        Type: "",
+        Color: "",
+        Modules: "",
+        Size: "",
+        Price: "",
+        Picture: "",
         errors: "Submitted!"
       });
     }

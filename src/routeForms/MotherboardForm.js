@@ -11,7 +11,8 @@ class MotherboardForm extends React.Component {
     Slots: "",
     maxRam: "",
     Price: "",
-    Picture: ""
+    Picture: "",
+    errors:""
   };
   changeHandler = e => {
     this.setState({
@@ -33,6 +34,14 @@ class MotherboardForm extends React.Component {
     if (!errors) {
       Submitter("Motherboard", this.state);
       this.setState({
+        Name: "",
+        Socket: "",
+        Form: "",
+        Color: "",
+        Slots: "",
+        maxRam: "",
+        Price: "",
+        Picture: "",
         errors: "Submitted!"
       });
     }

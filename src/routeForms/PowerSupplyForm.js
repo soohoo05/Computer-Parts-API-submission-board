@@ -11,7 +11,8 @@ class PowerSupplyForm extends React.Component {
     Watts: "",
     Modular: "",
     Price: "",
-    Picture: ""
+    Picture: "",
+    errors:""
   };
   changeHandler = e => {
     this.setState({
@@ -33,6 +34,14 @@ class PowerSupplyForm extends React.Component {
     if (!errors) {
       Submitter("PowerSupply", this.state);
       this.setState({
+        Name: "",
+        Form: "",
+        Efficiency: "",
+        Color: "",
+        Watts: "",
+        Modular: "",
+        Price: "",
+        Picture: "",
         errors: "Submitted!"
       });
     }
@@ -83,9 +92,9 @@ class PowerSupplyForm extends React.Component {
               </label>
               <div className="col-md-4">
                 <select
-                  value={this.state.WaterCooled}
+                  value={this.state.Efficiency}
                   className="form-control input-md"
-                  name="WaterCooled"
+                  name="Efficiency"
                   onChange={e => this.changeHandler(e)}
                 >
                   <option value="---">---</option>

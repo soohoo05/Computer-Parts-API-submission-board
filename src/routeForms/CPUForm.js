@@ -8,7 +8,8 @@ class CPUForm extends React.Component {
     Speed:"",
     Cores:"",
     Price:"",
-    Picture:""
+    Picture:"",
+    errors:""
   }
   changeHandler = (e) => {
     this.setState({
@@ -30,6 +31,11 @@ class CPUForm extends React.Component {
       if(!errors){
         Submitter("CPU",this.state)
         this.setState({
+          Name:"",
+          Speed:"",
+          Cores:"",
+          Price:"",
+          Picture:"",
           errors:"Submitted!"
 
         })

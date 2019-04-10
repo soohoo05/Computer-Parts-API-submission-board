@@ -6,7 +6,6 @@ class VideoCardForm extends React.Component {
   state = {
     Name: "",
     chipSet: "",
-    Type: "",
     Color: "",
     Memory: "",
     coreClock: "",
@@ -34,6 +33,13 @@ class VideoCardForm extends React.Component {
     if (!errors) {
       Submitter("VideoCard", this.state);
       this.setState({
+        Name: "",
+        chipSet: "",
+        Color: "",
+        Memory: "",
+        coreClock: "",
+        Price: "",
+        Picture: "",
         errors: "Submitted!"
       });
     }
@@ -80,38 +86,7 @@ class VideoCardForm extends React.Component {
               </div>
             </div>
 
-            <div className="form-group">
-              <label className="col-md-4 control-label" htmlFor="Type">
-                Type
-              </label>
-              <div className="col-md-4">
-                <select
-                  value={this.state.VideoCard}
-                  className="form-control input-md"
-                  name="VideoCard"
-                  onChange={e => this.changeHandler(e)}
-                >
-                  <option value="---">---</option>
-                  <option value="ATX Desktop">ATX Desktop</option>
-                  <option value="ATX Full Tower">ATX Full Tower</option>
-                  <option value="ATX Mid Tower">ATX Mid Tower</option>
-                  <option value="ATX Mini Tower">ATX Mini Tower</option>
-                  <option value="ATX Test Bench">ATX Test Bench</option>
-                  <option value="HTPC">HTPC</option>
-                  <option value="MicroATX Desktop">MicroATX Desktop</option>
-                  <option value="MicroATX Mid Tower">MicroATX Mid Tower</option>
-                  <option value="MicroATX Mini Tower">
-                    MicroATX Mini Tower
-                  </option>
-                  <option value="MicroATX Slim">MicroATX Slim</option>
-                  <option value="Mini ITX Desktop">Mini ITX Desktop</option>
-                  <option value="Mini ITX Test Bench">
-                    Mini ITX Test Bench
-                  </option>
-                  <option value="Mini ITX Tower">Mini ITX Tower</option>
-                </select>
-              </div>
-            </div>
+
 
             <div className="form-group">
               <label className="col-md-4 control-label" htmlFor="Color">

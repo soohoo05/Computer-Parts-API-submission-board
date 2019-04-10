@@ -1,3 +1,6 @@
+import axios from 'axios'
+import key from '../key'
+
 export const Submitter = (part, body) => {
   switch (part) {
     case "Case":
@@ -29,34 +32,51 @@ export const Submitter = (part, body) => {
   }
 };
 
-const CaseSubmission = body => {
-  console.log("Case");
+const CaseSubmission = theBody => {
+  console.log(theBody)
+  axios.post(`http://localhost:3000/computerparts/cases/${key.key}`,{
+    theBody
+  })
 };
 
-const CoolerSubmission = body => {
-  console.log("cool");
+const CoolerSubmission = theBody => {
+  axios.post(`http://localhost:3000/computerparts/cpucoolers/${key.key}`,{
+    theBody
+  })
 };
 
-const CPUSubmission = body => {
-  console.log("cpu");
+const CPUSubmission = theBody => {
+  axios.post(`http://localhost:3000/computerparts/cpu/${key.key}`,{
+    theBody
+  })
 };
 
-const MemorySubmission = body => {
-  console.log("mem");
+const MemorySubmission = theBody => {
+  axios.post(`http://localhost:3000/computerparts/memory/${key.key}`,{
+    theBody
+  })
 };
 
-const MotherboardSubmission = body => {
-  console.log("moth");
+const MotherboardSubmission = theBody => {
+  axios.post(`http://localhost:3000/computerparts/motherboard/${key.key}`,{
+    theBody
+  })
 };
 
-const PowerSupplySubmission = body => {
-  console.log("power");
+const PowerSupplySubmission = theBody => {
+  axios.post(`http://localhost:3000/computerparts/powersupply/${key.key}`,{
+    theBody
+  })
 };
 
-const StorageSubmission = body => {
-  console.log("stora");
+const StorageSubmission = theBody => {
+  axios.post(`http://localhost:3000/computerparts/storage/${key.key}`,{
+    theBody
+  })
 };
 
-const VideoCardSubmission = body => {
-  console.log("vidcard");
+const VideoCardSubmission = theBody => {
+  axios.post(`http://localhost:3000/computerparts/videocard/${key.key}`,{
+    theBody
+  })
 };

@@ -10,10 +10,10 @@ class StorageForm extends React.Component {
     Color: "",
     Capacity: "",
     Price: "",
-    Picture: ""
+    Picture: "",
+    errors:""
   };
   changeHandler = e => {
-    console.log(this.state)
     this.setState({
       [e.target.name]: e.target.value
     });
@@ -33,6 +33,13 @@ class StorageForm extends React.Component {
     if (!errors) {
       Submitter("Storage", this.state);
       this.setState({
+        Name: "",
+        Form: "",
+        Type: "",
+        Color: "",
+        Capacity: "",
+        Price: "",
+        Picture: "",
         errors: "Submitted!"
       });
     }

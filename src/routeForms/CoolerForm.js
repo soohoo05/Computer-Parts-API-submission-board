@@ -33,6 +33,13 @@ class CoolerForm extends React.Component {
       if(!errors){
         Submitter("Cooler",this.state)
         this.setState({
+          Name:"",
+          RPM:"",
+          Noise:"",
+          Color:"",
+          WaterCooled:"",
+          Price:"",
+          Picture:"",
           errors:"Submitted!"
 
         })
