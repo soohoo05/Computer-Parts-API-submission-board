@@ -9,3 +9,5 @@ TBA
 The API this submission board supports can be found at the following url:
 
 TBA
+
+![Screenshot](home.png)
