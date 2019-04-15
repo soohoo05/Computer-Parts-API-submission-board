@@ -1,6 +1,10 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "name": "Comp Parts Submission Board",
+=======
+  "name": "my-react-app",
+>>>>>>> 78c1be923c9c77075fe8ee3df918e69c9ca4056d
   "builds": [
     {
       "src": "package.json",
@@ -30,3 +34,8 @@
     }
   ]
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 78c1be923c9c77075fe8ee3df918e69c9ca4056d
